@@ -1,0 +1,12 @@
+.grid {
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+a {
+  margin: 5px;
+}
