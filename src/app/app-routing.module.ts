@@ -5,6 +5,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { MoviesInCategoryComponent } from './pages/categories/movies-in-category/movies-in-category.component';
 import { MovieDetailsComponent } from './pages/movies/movie-details/movie-details.component';
+import { YearsComponent } from './pages/years/years.component';
+import { MovieInYearComponent } from './pages/years/movie-in-year/movie-in-year.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'movie/:id', component: MovieDetailsComponent },
   { path: 'categories', component: CategoriesComponent },
   { path: 'category/:category', component: MoviesInCategoryComponent },
+  { path: 'years', component: YearsComponent },
+  { path: 'year/:year', component: MovieInYearComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
