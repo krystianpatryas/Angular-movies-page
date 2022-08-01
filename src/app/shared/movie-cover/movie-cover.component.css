@@ -18,6 +18,7 @@ img {
 
 .black-text:hover {
   font-weight: bold;
+  cursor: pointer;
 }
 
 * {
