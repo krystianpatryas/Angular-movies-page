@@ -1,7 +1,9 @@
 <div class="grid">
+  <p class="red-text" *ngIf="errorMessage">{{errorMessage}}</p>
   <button class="btn-large" (click)="get()">Get</button>
   <button class="btn-large" (click)="post()">Post</button>
   <button class="btn-large" (click)="put()">Put</button>
   <button class="btn-large" (click)="patch()">Patch</button>
   <button class="btn-large" (click)="delete()">Delete</button>
+  <button class="btn-large" (click)="error()">Error</button>
 </div>
