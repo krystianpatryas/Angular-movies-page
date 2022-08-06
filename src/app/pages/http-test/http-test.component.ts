@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/movie';
-import { HttpMoviesService } from 'src/app/services/http-movies.service';
+import { HttpMoviesService } from '../../services/http-movies.service';
+import { Movie } from '../../models/movie';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-http-test',
@@ -47,7 +48,7 @@ export class HttpTestComponent {
   patch() {
     const movie: Partial<Movie> = {
       id: '54',
-      country: 'USA',
+      plot: 'Gerald szuka Ciri.',
     };
     this.http.patchMovie(movie).subscribe();
   }

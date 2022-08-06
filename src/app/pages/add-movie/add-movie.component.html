@@ -1,0 +1,119 @@
+<div class="grid">
+  <form (ngSubmit)="send()" class="container" #form="ngForm">
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.title"
+          id="title"
+          name="title"
+          type="text"
+          required
+          minlength="2"
+          #title="ngModel"
+          (input)="printModel(title)"
+        />
+        <label for="title">Title</label>
+        <ng-container *ngIf="title.invalid && title.touched">
+          <div class="card-panel red darken-1" *ngIf="title.errors.required">
+            Field required
+          </div>
+          <div class="card-panel red darken-1" *ngIf="title.errors.minlength">
+            Text is to short
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          class="browser-default"
+          [(ngModel)]="model.year"
+          name="year"
+          required
+        >
+          <option *ngFor="let year of years" [ngValue]="year">{{
+            year
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <select
+          class="browser-default"
+          [(ngModel)]="model.category"
+          name="category"
+          required
+        >
+          <option *ngFor="let category of categories" [ngValue]="category">{{
+            category
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.director"
+          id="director"
+          name="director"
+          type="text"
+          required
+        />
+        <label for="director">Director</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.plot"
+          id="plot"
+          name="plot"
+          type="text"
+          required
+        />
+        <label for="plot">Plot</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.country"
+          id="country"
+          name="country"
+          type="text"
+          required
+        />
+        <label for="country">Country</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.imdbRating"
+          id="imdb"
+          name="imdbRating"
+          type="text"
+          required
+        />
+        <label for="imdb">IMDB Rating</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s8">
+        <input
+          [(ngModel)]="model.poster"
+          id="poster"
+          name="poster"
+          type="text"
+          required
+        />
+        <label for="poster">Poster</label>
+      </div>
+    </div>
+    <button class="btn-small" type="submit" [disabled]="form.invalid">
+      Send
+    </button>
+    <button class="btn-small red" type="reset">Reset</button>
+  </form>
+</div>
