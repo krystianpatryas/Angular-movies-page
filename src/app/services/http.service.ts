@@ -28,12 +28,11 @@ export class HttpService {
     );
   }
 
-  // Wykorzystaj do zrobienia zadania
+
   getYears(): Observable<string[]> {
     return this.httpClient.get<string[]>('http://localhost:3000/years');
   }
 
-  // Wykorzystaj do zrobienia zadania
   getMoviesFromYear(year: string): Observable<Movie[]> {
     return this.getMovies().pipe(
       map(movies => movies.filter(movie => movie.year === year))
